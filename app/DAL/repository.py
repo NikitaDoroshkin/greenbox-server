@@ -1,21 +1,21 @@
 from app.Models.sensors_data import SensorsData
 from app.Utils.date_utils import try_parse_date
 
-dba = [SensorsData(0, 1, 2, 3, "2019-03-17")]
+dba = [SensorsData(0, 1, 2, 3)]  # , "2019-03-17"
 
 
-def add(self, model):
-    self.dba.append(model)
+def add(model):
+    dba.append(model)
     return 'Updated successfully'
 
 
-def get(self, range=(-1)):
+def get(range):
     if (type(range) not in [list, tuple]) or (len(range) != 2):
         return dba[-1]
     else:
         from_date, to_date = try_parse_date(range[0]), try_parse_date(range[1])
         if from_date and to_date:
-            return filter(lambda x: from_date <= try_parse_date(x.timestamp) <= to_date, self.dba)
+            return filter(lambda x: from_date <= try_parse_date(x.timestamp) <= to_date, dba)
         else:
             return dba[range[0]:range[1] + 1]
 

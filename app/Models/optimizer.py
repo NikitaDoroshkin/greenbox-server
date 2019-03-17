@@ -1,8 +1,8 @@
-from app.Models.sensors_data import SensorsData
+from app.Models.control_data import ControlData
 
 # Here will be our model to optimize plant growth
 class Optimizer:
-    optimal_model = SensorsData(1, 2, 3, 4, "2019-03-17")
+    optimal_model = ControlData(255, 255, 255, 1) #, "2019-03-17"
 
     def optimize(self, model):
         return self.optimal_model
