@@ -1,4 +1,4 @@
-python-dateutil
+python-dateutil==2.7.5
 Click==7.0
 Flask==1.0.2
 gunicorn==19.9.0
