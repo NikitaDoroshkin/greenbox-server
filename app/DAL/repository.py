@@ -10,7 +10,7 @@ def add(model):
 
 
 def get(range):
-    if (type(range) not in [list, tuple]) or (len(range) != 2):
+    if (type(range) not in [list, tuple]) or (len(range) != 2) or(not range[0] or not range[1]):
         return dba[-1]
     else:
         from_date, to_date = try_parse_date(range[0]), try_parse_date(range[1])
